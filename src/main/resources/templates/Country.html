@@ -419,6 +419,7 @@ Country.html<!DOCTYPE html>
                   <td>
                       <div class="btn-group">
                           <a th:href="@{/countries/findById/(id=${country.id})}" class="btn btn-primary" id="editButton">Edit</a>
+                          <a th:href="@{/countries/delete/(id=${country.id})}" class="btn btn-danger" id="deleteButton">Delete</a>
                       </div>
                   </td>
 
@@ -443,6 +444,52 @@ Country.html<!DOCTYPE html>
     </div>
   </section>
   <!-- container section end -->
+  <div class="modal fade" id="addModal" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h4 class="modal-title" id="exampleModalLabel2">New Country</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+              </div>
+              <div class="modal-body">
+                  <form th:action="@{/countries/addNew}" method="post">
+
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Description:</label>
+                          <input type="text" class="form-control" id="descriptionName" name="description">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Capital:</label>
+                          <input type="text" class="form-control" id="capitalName" name="capital">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Code:</label>
+                          <input type="text" class="form-control" id="codeName" name="code">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Continent:</label>
+                          <input type="text" class="form-control" id="continentName" name="continent">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Nationality:</label>
+                          <input type="text" class="form-control" id="nationalityName" name="nationality">
+                      </div>
+
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
   <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -493,47 +540,22 @@ Country.html<!DOCTYPE html>
           </div>
       </div>
   </div>
-  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel2">New Country</h5>
+                  <h5 class="modal-title">Confirm Delete</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
-                  <form th:action="@{/countries/addNew}" method="post">
-
-                      <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Description:</label>
-                          <input type="text" class="form-control" id="descriptionName" name="description">
-                      </div>
-                      <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Capital:</label>
-                          <input type="text" class="form-control" id="capitalName" name="capital">
-                      </div>
-                      <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Code:</label>
-                          <input type="text" class="form-control" id="codeName" name="code">
-                      </div>
-                      <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Continent:</label>
-                          <input type="text" class="form-control" id="continentName" name="continent">
-                      </div>
-                      <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Nationality:</label>
-                          <input type="text" class="form-control" id="nationalityName" name="nationality">
-                      </div>
-
-                      <div class="form-group">
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                      </div>
-
-                  </form>
+                  <p>Are You sure to delete this record?</p>
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <a id="confirmDeleteButton" class="btn btn-primary" href="">Confirm!</a>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
               </div>
           </div>
       </div>
