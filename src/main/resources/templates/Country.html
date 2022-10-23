@@ -443,7 +443,7 @@ Country.html<!DOCTYPE html>
     </div>
   </section>
   <!-- container section end -->
-  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
@@ -453,7 +453,7 @@ Country.html<!DOCTYPE html>
                   </button>
               </div>
               <div class="modal-body">
-                  <form th:action="@{/countries/update}" method="post">
+                  <form th:action="@{/countries/update}" method="put">
 
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Description:</label>
@@ -493,11 +493,11 @@ Country.html<!DOCTYPE html>
           </div>
       </div>
   </div>
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Update country</h5>
+                  <h5 class="modal-title" id="exampleModalLabel2">New Country</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
@@ -507,23 +507,23 @@ Country.html<!DOCTYPE html>
 
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Description:</label>
-                          <input type="text" class="form-control" id="descriptionEdit" name="description">
+                          <input type="text" class="form-control" id="descriptionName" name="description">
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Capital:</label>
-                          <input type="text" class="form-control" id="capitalEdit" name="capital">
+                          <input type="text" class="form-control" id="capitalName" name="capital">
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Code:</label>
-                          <input type="text" class="form-control" id="codeEdit" name="code">
+                          <input type="text" class="form-control" id="codeName" name="code">
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Continent:</label>
-                          <input type="text" class="form-control" id="continentEdit" name="continent">
+                          <input type="text" class="form-control" id="continentName" name="continent">
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Nationality:</label>
-                          <input type="text" class="form-control" id="nationalityEdit" name="nationality">
+                          <input type="text" class="form-control" id="nationalityName" name="nationality">
                       </div>
 
                       <div class="form-group">
